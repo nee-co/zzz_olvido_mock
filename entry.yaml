@@ -1,0 +1,29 @@
+- # olvido GET
+  request:
+    url: /internal/questions
+    method: GET
+    query:
+      user_id: 1
+  response:
+    status: 200
+    body: '{ id: 1, message: "好きな食べ物は?" }'
+
+- # olvido POST
+  request:
+    url: /internal/questions/:id
+    method: POST
+    body:
+      answer: "フォアグラ"
+  response:
+    status: 200
+    body: '{ id: 1 }'
+
+- # olvido POST
+  request:
+    url: /internal/questions/:id
+    method: POST
+    body:
+      answer: "キャビア"
+  response:
+    status: 422
+    body: '{ error: "違うぅぅ" }'
